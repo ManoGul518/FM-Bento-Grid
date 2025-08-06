@@ -1,0 +1,257 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --dark-purple: hsl(256, 67%, 59%);
+    --light-purple: hsl(254, 88%, 90%);
+    --yellow: hsl(39, 100%, 71%);
+    --light-yellow: hsl(31, 66%, 93%);
+}
+
+body {
+    background-color: #f2f2f2;
+    min-height: 100vh;
+    font-family: "DM Sans";
+    font-size: 18px;
+    line-height: 1;
+    display: grid;
+    place-content: center;
+}
+
+.grid-cont {
+    width: 80vw;
+    margin: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    grid-template-areas:
+        'box7 box1 box1 box4'
+        'box7 box1 box1 box4'
+        'box8 box2 box3 box4'
+        'box8 box6 box5 box5';
+    gap: 1.2rem;
+}
+
+.grid-cont .box {
+    border-radius: 8px;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.grid-cont .box img {
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.grid-cont .box1 {
+    grid-area: box1;
+    padding: 2rem 3rem;
+    background-color: var(--dark-purple);
+    color: #fff;
+    flex-direction: column;
+}
+
+.grid-cont .box1 h1 {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.grid-cont .box1 h1 .em {
+    color: var(--yellow);
+}
+
+.grid-cont .box1 img {
+    width: 40%;
+    margin-bottom: 10px;
+}
+
+.grid-cont .box2 {
+    grid-area: box2;
+    padding: 0.5rem 2rem;
+    background-color: #fff;
+}
+
+.grid-cont .box3 {
+    grid-area: box3;
+    padding: 1rem 2rem;
+    background-color: var(--yellow);
+}
+
+.grid-cont .box4 {
+    grid-area: box4;
+    padding: 1rem;
+    background-color: var(--light-purple);
+}
+.grid-cont .box4 p {
+    margin: 10px 0;
+}
+.grid-cont .box4 img {
+    width: 100%;
+}
+
+.grid-cont .box5 {
+    grid-area: box5;
+    padding: 1rem;
+    background-color: var(--dark-purple);
+    color: #fff;
+}
+
+.grid-cont .box5 img {
+    width: auto;
+    height: 100%;
+    margin-right: 5px;
+}
+
+.grid-cont .box6 {
+    grid-area: box6;
+    background-color: #fff;
+}
+
+.grid-cont .box6 span {
+    font-size: 2.2rem;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.grid-cont .box6 p {
+    margin-bottom: 15px;
+}
+
+.grid-cont .box6 img {
+    margin-top: 10px;
+    width: 60%;
+}
+
+.grid-cont .box7 {
+    grid-area: box7;
+    background-color: var(--light-yellow);
+}
+
+.grid-cont .box7 p {
+    margin: 50px 0 25px;
+    font-weight: 500;
+}
+
+.grid-cont .box7 p span {
+    color: var(--dark-purple);
+    font-style: italic;
+}
+
+.grid-cont .box7 img {
+    width: 90%;
+}
+
+.grid-cont .box8 {
+    grid-area: box8;
+    background-color: var(--yellow);
+}
+
+.grid-cont .box8 p {
+    margin-bottom: 20px;
+}
+
+.grid-cont .box1,
+.grid-cont .box5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-cont .md-txt {
+    font-weight: 500;
+    font-size: 1.9rem;
+    line-height: 0.9;
+    margin-bottom: 10px;
+}
+
+.grid-cont .lg-txt {
+    font-size: clamp(1.5rem, 1vw + 1rem, 2.2rem);
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.attribution {
+    font-size: 14px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 1130px) {
+
+    .grid-cont {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 200px;
+        grid-template-areas: 
+        'box1 box1 box4'
+        'box3 box6 box4'
+        'box7 box5 box5'
+        'box7 box8 box2';
+        gap: 1rem;
+    }
+
+    .grid-cont .box {
+        padding: 1rem;
+    }
+
+    .grid-cont .box7 {
+        padding: 1rem 2rem;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .grid-cont {
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 200px;
+        grid-template-areas: 
+        'box1 box1'
+        'box2 box3'
+        'box4 box6'
+        'box4 box7'
+        'box5 box8';
+        gap: 0.8rem;
+    }
+
+    .grid-cont .box {
+        padding: 1rem;
+    }
+
+    .grid-cont .box5 {
+        flex-direction: column;
+    }
+
+    .grid-cont .box5 img {
+        width: 50%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+
+    .grid-cont .box7 p {
+        margin-top: 0;
+    }
+
+}
+
+@media (max-width: 500px) {
+    .grid-cont {
+        display: flex;
+        flex-direction: column;
+        grid-template-areas: none;
+        gap: 2rem;
+    }
+    .grid-cont .box {
+        padding: 1rem 2rem;
+    }
+}
